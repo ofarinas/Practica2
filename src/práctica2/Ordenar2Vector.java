@@ -6,21 +6,28 @@ class Ordenar2Vector implements OrdenarVector{
         return null;
     }    
     
-    public void ordena (int[] v , DatosEstadisticos de){
+    public void ordena (int[] vec , DatosEstadisticos de){
         
-        double comienzo = System.currentTimeMilis();
+        double comienzo = System.currentTimeMillis();
         
+        int menor;
+        int pos;
+        for (int i = 0; i < vec.length; i++) {
+            menor = vec[i];
+            pos = i;
+            for (int j = i+1; j <= vec.length; j++) {
+                de.añadeComparacion();
+                if (menor>vec[j]) {
+                    menor = vec[j];
+                    pos = j;
+                }
+            }
+            de.añadeMovimiento();
+            vec[pos] = vec[i];
+            vec[i] = menor;
+        }
         
-        
-        /*TODO
-            Implementa el método nuevo
-            Número de comparaciones hechas
-            Número de movimientos realizados
-        */
-        
-        
-        
-        double fin = System.currentTimeMilis();
+        double fin = System.currentTimeMillis();
         
         de.estableceTiempo(fin-comienzo);
     }
