@@ -1,3 +1,5 @@
+package práctica2;
+
 class DatosEstadisticos {
     
     private double tiempo;
