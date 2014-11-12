@@ -18,7 +18,7 @@ public class CalculadorEstadisticas {
             m.ordena(vector, datosEstadisticos);
             datosEstadisticos.añadeTiempo(datosEstadisticos.dameTiempo());
         }
-        datosEstadisticos.
+     
         return new MediaDatosEstadisticos();
     }
 
