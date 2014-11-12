@@ -1,3 +1,4 @@
+package práctica2;
 
 class MediaDatosEstadisticos{
 
