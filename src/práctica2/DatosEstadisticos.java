@@ -1,6 +1,6 @@
 package práctica2;
 
-class DatosEstadisticos {
+public class DatosEstadisticos {
     
     private double tiempo;
     private int comparaciones;

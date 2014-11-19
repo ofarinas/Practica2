@@ -11,25 +11,28 @@ public class CalculadorEstadisticas {
     }
 
     public static MediaDatosEstadisticos estadisticaOrdenaVectorAleatorio(OrdenarVector m, int tam_vector) {
-        int[] vector;
-        DatosEstadisticos datosEstadisticos = new DatosEstadisticos();
+        MediaDatosEstadisticos mediaDatosEstadisticos = new MediaDatosEstadisticos();
         for (int i = 0; i < 10; i++) {
-            vector = GeneraCaso.generaVector(tam_vector, true);
-            m.ordena(vector, datosEstadisticos);
-            datosEstadisticos.añadeTiempo(datosEstadisticos.dameTiempo());
+            mediaDatosEstadisticos.añadeDatosEstadisticos(estadisticaOrdenaVector(m, tam_vector, true));
         }
-     
-        return new MediaDatosEstadisticos();
+
+        return mediaDatosEstadisticos;
     }
 
     public static DatosEstadisticos[] estadisticasOrdenaVectoresInversos(OrdenarVector m, int[] tam_vectores) {
-        DatosEstadisticos[] resultados = new DatosEstadisticos[tam_vectores.length];
-        return resultados;
+        DatosEstadisticos[] datosEstadisticos = new DatosEstadisticos[tam_vectores.length];
+        for (int i = 0; i < tam_vectores.length; i++) {
+            datosEstadisticos[i] = estadisticaOrdenaVector(m, tam_vectores[i], false);
+        }
+        return datosEstadisticos;
     }
 
     public static MediaDatosEstadisticos[] estadisticasOrdenaVectoresAleatorios(OrdenarVector m, int[] tam_vectores) {
-        MediaDatosEstadisticos[] resultados = new MediaDatosEstadisticos[tam_vectores.length];
-        return resultados;
+        MediaDatosEstadisticos[] datosEstadisticoses=new MediaDatosEstadisticos[tam_vectores.length];
+        for (int i = 0; i < tam_vectores.length; i++) {
+            estadisticaOrdenaVector(m, tam_vectores[i], true);
+        }
+        return datosEstadisticoses;
     }
 
 }

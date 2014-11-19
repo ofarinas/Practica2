@@ -1,28 +1,37 @@
+//juan daniel ,Osvaldo 
 package práctica2;
-
 class MediaDatosEstadisticos{
 
     private int numeroDatos;
+    private float tiempo;
+    private float numeroDeComparaciones;
+    private float numeroDeMovimiento;
+    
+    public MediaDatosEstadisticos() {
+    }
+
     
     public void añadeDatosEstadisticos(DatosEstadisticos de){
         numeroDatos++;
-        //TODO Añadir el "de" a un ArrayList for example
+        tiempo+=(float)de.dameTiempo();
+        numeroDeComparaciones+=de.dameComparaciones();
+        numeroDeMovimiento+=de.dameMovimientos();
     }
     
     public double dameMediaTiempos(){
+        return tiempo/numeroDatos;
         
-        //TODO Xmedia = suma de todos los tiempos  / numeroDatos;
     }
     
     public double dameMediaComparaciones(){
-        
-        //TODO Xmedia = suma de todos los tiempos  / numeroDatos;
+        return numeroDeComparaciones/numeroDatos;
+       
     }
     
     
     public double dameMediaMovimientos(){
-        
-        //TODO Xmedia = suma de todos los tiempos  / numeroDatos;
+        return numeroDeMovimiento/numeroDatos;
+       
     }
     
     
